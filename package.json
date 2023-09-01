@@ -1,0 +1,15 @@
+{
+  "name": "slack-bot-ollama",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@slack/bolt": "^3.10.0",
+    "ts-node": "^10.7.0"
+  }
+}
