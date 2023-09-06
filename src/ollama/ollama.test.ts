@@ -17,7 +17,7 @@ describe('ollama', () => {
         const res = await ollama.generateStream({
             userInput: 'Hello',
             lineHandler: str => {
-
+                return Promise.resolve();
             },
         });
         expect(res.answer).toBe('fdsafdsa');

@@ -75,7 +75,6 @@ export default class OllamaService {
     }) : Promise<GenerateResult> {
         const url = this.getUrl('/api/generate')
 
-        // @ts-ignore
         const postResponse = await fetch(url, {
             method: 'POST',
             headers: {
@@ -123,7 +122,6 @@ export default class OllamaService {
     public async generate({ userInput, context } : { userInput: string, context?: ArrayLike<number> }) : Promise<GenerateResult> {
         const url = this.getUrl('/api/generate')
 
-        // @ts-ignore
         const postResponse = await fetch(url, {
             method: 'POST',
             headers: {
@@ -164,9 +162,8 @@ export default class OllamaService {
 }
 
 // Function to stream the response from the server
-// @ts-ignore
 async function readResponseStream(response: Response, callback: (s: GenerateResponse) => Promise<void>) {
-    const reader = response.body.getReader();
+    const reader = response.body!.getReader();
     let partialLine = '';
 
     while (true) {
